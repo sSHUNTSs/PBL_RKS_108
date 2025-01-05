@@ -9,7 +9,7 @@ Group Leader:
 Syahdan Arief S- 4332401006
 
 Group Members:
-Faizah Muhammad - 4332401015
-Lu’lu’ul Ilmi - 4332401016
+  1. Faizah Muhammad - 4332401015
+  2. Lu’lu’ul Ilmi - 4332401016
 
 Nothing is true. Everything is permitted.
