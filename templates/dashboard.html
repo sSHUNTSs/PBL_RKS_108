@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptography Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Cryptography Web</h1>
+            <div class="logo-container">
+                <img src="static/polibatam-logo-removebg-preview.png" alt="Logo" class="logo">
+                <img src="static/rks-logo-removebg-preview.png" alt="Logo" class="logo">
+            </div>
+        </div>
+    </header>
+    <div class="welcome-container">
+        <h2 class="common-title">Welcome, {{ username }}!</h2>
+    </div>
+    <div class="feature-selection-container">
+        <p>Select the features you want to use:</p>
+        <form method="POST" action="/dashboard"></form>
+            <label for="feature">Select feature:</label>
+            <select id="feature" onchange="toggleFeature()">              
+                <option value="encrypt_text">Encrypt Text</option>
+                <option value="decrypt_text">Decrypt Text</option>
+                <option value="send_message">Send Message</option>           
+                <option value="process_file_txt">Encrypt/Decrypt File TXT</option>
+                
+            </select>
+
+        <form method="POST" action="/dashboard" id="encrypt_text_form" class="feature-form" style="display:none;">
+            <input type="hidden" name="feature" value="encrypt_text"> 
+            <label for="text">Text:</label>
+            <textarea id="text" name="text" rows="3"></textarea><br>
+            <label for="key">Key:</label>
+            <input type="text" id="key" name="key" class="input-key"><br>
+            <button type="submit" class="btn btn-primary">Encrypt</button>
+        </form>
+
+        <form method="POST" action="/dashboard" id="decrypt_text_form" class="feature-form" style="display:none;">
+            <input type="hidden" name="feature" value="decrypt_text">
+            <label for="ciphertext">Ciphertext:</label>
+            <textarea id="ciphertext" name="ciphertext" rows="3"></textarea><br>
+            <label for="key">Key:</label>
+            <input type="text" id="decrypt_key" name="key" class="input-key"><br>
+            <button type="submit" class="btn btn-primary">Decrypt</button>
+        </form>    
+
+        <div id="send_message_form" class="feature-form" style="display:none;">
+            <form method="POST" action="/dashboard">
+                <input type="hidden" name="feature" value="send_message">
+                <label for="receiver">Receiver:</label>
+                <input type="text" id="receiver" name="receiver" required><br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="3" required></textarea><br>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+
+        <form method="POST" action="/dashboard" id="process_file_txt_form" class="feature-form" style="display:none;" enctype="multipart/form-data">
+            <input type="hidden" name="feature" value="process_file_txt">
+            <input type="file" name="file" required>
+            <input type="text" name="key" required>
+            <select name="operation">
+                <option value="encrypt">Encrypt</option>
+                <option value="decrypt">Decrypt</option>
+            </select>
+            <button type="submit">Process File TXT</button>
+        </form>
+
+        {% if result %}
+        <div class="result-container">
+            <h3>Result:</h3>
+            <textarea>{{ result }}</textarea>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <div class="error-message">
+            <strong>Error:</strong> {{ error }}
+        </div>
+        {% endif %}
+
+        </form>
+    </div>
+    
+    <div class="feature-section" id="bruteforce_section">
+        <h3>Brute Force</h3>
+        <form method="POST" action="/dashboard" id="bruteforce_form">
+            <input type="hidden" name="feature" value="bruteforce">
+            <label for="ciphertext">Ciphertext:</label>
+            <textarea id="brute_ciphertext" name="ciphertext" rows="3"></textarea>
+            <label for="max_length">Key Length:</label>
+            <input type="number" id="max_length" name="max_length" value="3" min="1" max="3" placeholder="3">
+            <button type="submit">Brute force</button>
+        </form>   
+    
+        {% if bruteforce_result %}
+        <div class="result-container">
+            <h4>Brute Force Result:</h4>
+            <ul>
+                {% for result in bruteforce_result %}
+                    <li>{{ result }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if error and feature == 'bruteforce' %}
+        <div class="error-container">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+    </div>    
+
+    <div class="received-messages-container">
+        <div class="received-messages">
+            <h3>Pesan Masuk:</h3>
+            {% for msg in received_messages %}
+                <div class="message">
+                    <strong>From:</strong> {{ msg.sender }} <br>
+                    <strong>Message:</strong> {{ msg.decrypted_message }} <br>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="about-us-section">
+        <h1 class="common-title">About Us</h1>
+        <div class="team-container">
+          <div class="team-member">
+            <div class="photo-container">
+              <img src="static/syahdan.jpg" alt="Anggota 1">
+            </div>
+            <p>Syahdan Arief S</p>
+            <p>4332401006</p>
+          </div>
+          <div class="team-member">
+            <div class="photo-container">
+              <img src="static/faizah.jpg" alt="Anggota 2">
+            </div>
+            <p>Faizah Muhammad</p>
+            <p>4332401015</p>
+          </div>
+          <div class="team-member">
+            <div class="photo-container">
+              <img src="static/ilmi.jpg" alt="Anggota 3">
+            </div>
+            <p>	Lu`Lu`Ul Ilmi</p>
+            <p>4332401016</p>
+          </div>
+        </div>
+    </div>      
+
+    <div class="project-manager-section">
+        <h1 class="common-title">Project Manager</h1>
+        <div class="team-container">
+          <div class="team-member">
+            <div class="photo-container">
+              <img src="static/pak hamdani.jpg" alt="Project Manager">
+            </div>
+            <p>Hamdani Arif, S.Pd., M.Sc</p>
+          </div>
+        </div>
+    </div>
+
+        <a href="/logout" class="btn btn-secondary logout-button">Logout</a>
+    </div>
+
+    <script>
+        function toggleFeature() {
+            const selectedFeature = document.getElementById("feature").value;
+            const forms = document.querySelectorAll(".feature-form");
+            forms.forEach(form => form.style.display = "none");
+            const selectedForm = document.getElementById(`${selectedFeature}_form`);
+            if (selectedForm) {
+                selectedForm.style.display = "block";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            toggleFeature();
+        });
+    </script>
+</body>
+</html>

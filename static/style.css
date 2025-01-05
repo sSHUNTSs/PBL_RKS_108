@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'lora', serif;
+    background-color: #ECEBDE;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative; 
+}
+
+.logo-container {
+    position: absolute; 
+    top: 20px; 
+    right: 20px;
+}
+
+.container {
+    max-width: 400px; 
+    min-height: 350px;
+    background-color: #D7D3BF;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+}
+
+h1, h2, h3 {
+    color: #1E3E62;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 210%;
+}
+
+.p-signup {
+    margin-top: 10px; /* Atur nilai ini sesuai kebutuhan Anda */
+    text-align: center; /* Mengatur teks agar berada di tengah */
+}
+
+.btn-custom {
+    width: 100%; /* Mengatur tombol agar lebar 100% dari kontainer */
+    background-color: #1E3E62; /* Ganti dengan warna yang Anda inginkan */
+    border: none; /* Menghilangkan border default */
+    border-radius: 5px; /* Sudut membulat */
+    padding: 12px; /* Padding untuk tombol */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+    color: white;
+    margin: 0 auto;
+}
+
+.btn-custom:hover {
+    background-color: #163A54; /* Ganti dengan warna saat hover */
+    color: #59ec0a;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #1E3E62;
+    font-size: 1rem;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #C1BAA1;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: #ECEBDE;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.input-small {
+    width: 80%; 
+    height: 35px;
+    margin: 0 auto; 
+}
+
+button {
+    background-color: #A59D84;
+    color: #ECEBDE;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #C1BAA1;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.error-message {
+    color: red; 
+    margin: 10px 0; 
+    font-weight: bold; 
+}
+
+h1, p {
+    color: #A59D84;
+    text-align: center;
+}
+
+.flash-messages {
+    margin-bottom: 15px;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5rem;
+    }
+}

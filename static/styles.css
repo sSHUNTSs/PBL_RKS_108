@@ -1,0 +1,353 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Lora', serif;
+    background: linear-gradient(to bottom, #705C53 40%, #8A7D72 60%, #a9d6eb 100%);
+    color: #000000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 180vh;
+    margin: 0;
+}
+
+/* Header styles */
+header {
+    background-color: #EDDFE0; /* Warna latar belakang header dengan transparansi */
+    color: #705C53; /* Warna teks */
+    padding: 10px; /* Padding di dalam header */
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    justify-content: space-between; /* Memisahkan konten ke kiri dan kanan */
+    align-items: center; /* Menyelaraskan item secara vertikal */
+}
+
+.header-content {
+    display: flex; /* Flexbox untuk konten header */
+    justify-content: space-between; /* Memisahkan konten */
+    align-items: center; /* Menyelaraskan item secara vertikal */
+    flex: 1; /* Memungkinkan konten header untuk mengisi ruang */
+}
+
+.header-content h1 {
+    margin-right: auto; /* Memastikan judul berada di sebelah kiri */
+    font-size: 24px; /* Ukuran font judul */
+}
+
+.welcome-container {
+    margin-top: 20px;
+}
+
+.logo-container {
+    margin-left: auto; /* Memastikan logo berada di pojok kanan */
+}
+
+.logo {
+    width: 80px; /* Atur ukuran logo sesuai kebutuhan */
+    height: auto; /* Mempertahankan rasio aspek */
+}
+
+.common-title {
+    font-family: 'Lora', serif; /* Menyamakan font */
+    font-size: 24px; /* Menyamakan ukuran font */
+    color: #333; /* Menyamakan warna teks */
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    margin-bottom: 20px; /* Spasi di bawah judul */
+}
+
+.feature-selection-container {
+    background-color: #B7B7B7; 
+    color: #000000;
+    padding: 20px; /* Padding di dalam kontainer */
+    border-radius: 8px; /* Sudut membulat */
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    margin: 20px auto; /* Margin untuk memusatkan kontainer */
+    max-width: 600px; /* Lebar maksimum kontainer */
+}
+
+.feature-selection-container label {
+    display: block; 
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #000000; 
+}
+
+.feature-selection-container select {
+    width: 100%; /* Lebar dropdown 100% dari kontainer */
+    padding: 10px; /* Padding di dalam dropdown */
+    border: 1px solid #ccc; /* Border dropdown */
+    border-radius: 5px; /* Sudut membulat */
+    font-size: 1rem; /* Ukuran font */
+    transition: border-color 0.3s ease; /* Transisi border saat fokus */
+}
+
+.feature-selection-container select:focus {
+    border-color: #3498db; /* Warna border saat fokus */
+    outline: none; /* Menghilangkan outline default */
+}
+
+/* Kontainer utama */
+.container {
+    margin: 20px; /* Margin untuk kontainer utama */
+    position: relative;
+    display: flex;
+    margin-top: 20px;
+    overflow: auto;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    background: transparent;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background: transparent; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    border-radius: 8px;
+}
+
+.card {
+    background: #f9f9f9; /* Latar belakang card */
+    padding: 15px;
+    margin: 10px 0; /* Spasi antar card */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Bayangan untuk kedalaman */
+}
+
+.chart-container {
+    margin-top: 20px; /* Spasi di atas grafik */
+}
+
+/* Tombol Logout */
+.logout-button {
+    position: absolute; /* Mengatur posisi absolut */
+    margin-top: auto;
+    right: 20px; /* Jarak dari kanan */
+    background-color: #3505f2; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    padding: 10px 20px; /* Padding di dalam tombol */
+    border: none; /* Menghilangkan border */
+    border-radius: 5px; /* Sudut membulat */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    transition: background-color 0.3s; /* Efek transisi saat hover */
+}
+
+.logout-button:hover {
+    background-color: #f20404; /* Warna saat hover */
+}
+
+.btn-primary {
+    background-color: #3498db; /* Warna tombol */
+    color: white; /* Warna teks tombol */
+    padding: 8px 20px; /* Padding tombol */
+    border: none; /* Menghilangkan border */
+    border-radius: 5px; /* Sudut membulat */
+    font-size: 1rem; /* Ukuran font */
+    cursor: pointer; /* Cursor pointer */
+    transition: background-color 0.3s; /* Efek transisi */
+    margin-top: 10px;
+}
+
+.result {
+    margin-top: 20px; /* Jarak atas untuk hasil */
+}
+
+textarea {
+    height: 100x;
+    width: 300px;
+    resize: none; /* Mencegah pengguna meresize textarea */
+}
+
+.received-messages-container {
+    max-width: 400px; /* Atur lebar maksimum sesuai dengan form di atas */
+    margin: 20px auto; /* Memusatkan kontainer dengan margin otomatis */
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.received-messages {
+    padding: 10px; /* Padding untuk kontainer pesan */
+    background-color: #B7B7B7;
+    border-radius: 8px; /* Sudut membulat */
+}
+
+.message {
+    margin-bottom: 15px; /* Jarak antar pesan */
+    border-bottom: 1px solid #000000; /* Garis pemisah antar pesan */
+    padding-bottom: 10px; /* Padding bawah untuk pesan */
+}
+
+.alert-danger{
+    color: red;
+}
+
+.about-us-section {
+    text-align: center; 
+    padding: 40px 20px;
+}
+  
+.about-us-section h1 {
+    font-size: 25px;
+    margin-bottom: 30px;
+    color: #333;
+}
+  
+.team-container {
+    display: flex;
+    justify-content: center; /* Meratakan elemen secara horizontal */
+    gap: 30px; /* Jarak antar anggota */
+    flex-wrap: wrap; /* Responsif, pindah baris jika perlu */
+}
+  
+  /* Setiap anggota tim */
+.team-member {
+    text-align: center;
+    background-color: #fff; /* Latar belakang setiap anggota */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Lebar container anggota */
+    transition: transform 0.3s; /* Animasi efek hover */
+}
+  
+.team-member:hover {
+    transform: translateY(-5px); /* Efek hover */
+}
+  
+  /* Lingkaran foto */
+.photo-container {
+    width: 150px; /* Lebar lingkaran foto */
+    height: 150px; /* Tinggi lingkaran foto */
+    margin: 0 auto; /* Pusatkan lingkaran */
+    overflow: hidden; /* Memastikan foto berada dalam lingkaran */
+    border-radius: 50%;
+    border: 3px solid #ccc; /* Border lingkaran */
+}
+  
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pastikan gambar terisi lingkaran dengan baik */
+}
+  
+.team-member p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+  
+.project-manager-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+  
+.project-manager-section h1 {
+    font-size: 25px;
+    margin-bottom: 30px;
+    color: #444;
+}  
+
+#bruteforce_section {
+    margin-top: 20px;
+    border-top: 2px solid #ccc;
+    padding-top: 10px;
+}
+
+.result-container textarea {
+    width: 100%;
+    height: auto;
+    font-family: monospace;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.error-container {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.result-container ul {
+    list-style-type: none; /* Menghilangkan bullet points */
+    padding: 0; /* Menghilangkan padding default */
+    margin: 0; /* Menghilangkan margin default */
+}
+
+.feature-section {
+    background-color: #B7B7B7; /* Warna latar belakang fitur */
+    color: #000000; /* Warna teks */
+    padding: 20px; /* Padding di dalam fitur */
+    border-radius: 8px; /* Sudut membulat */
+    text-align: center; /* Menyelaraskan teks ke tengah */
+    margin: 20px auto; /* Memusatkan fitur */
+    max-width: 600px; /* Lebar maksimum fitur */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan */
+}
+
+.feature-section h3 {
+    font-size: 24px; /* Ukuran font judul */
+    margin-bottom: 15px; /* Spasi di bawah judul */
+}
+
+.feature-section textarea,
+.feature-section input {
+    width: 100%; /* Lebar 100% */
+    padding: 10px; /* Padding di dalam elemen */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Sudut membulat */
+    font-size: 1rem; /* Ukuran font */
+    margin-bottom: 10px; /* Spasi di bawah elemen */
+}
+
+.feature-section button {
+    background-color: #3498db; /* Warna tombol */
+    color: white; /* Warna teks tombol */
+    padding: 10px 20px; /* Padding tombol */
+    border: none; /* Menghilangkan border */
+    border-radius: 5px; /* Sudut membulat */
+    font-size: 1rem; /* Ukuran font */
+    cursor: pointer; /* Cursor pointer */
+    transition: background-color 0.3s; /* Efek transisi */
+}
+
+.feature-section button:hover {
+    background-color: #2980b9; /* Warna tombol saat hover */
+}
+
+.result-container textarea {
+    width: 100%;
+    height: auto;
+    font-family: monospace;
+    margin-top: 10px;
+    resize: none; /* Mencegah resize */
+}
+
+.error-container {
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+    text-align: left; /* Teks rata kiri */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Mengubah tata letak menjadi kolom pada layar kecil */
+    }
+
+    .sidebar {
+        width: 100%; /* Sidebar lebar 100% pada layar kecil */
+        margin-bottom: 20px; /* Spasi di bawah sidebar */
+    }
+
+    .team-member {
+        flex-direction: column; /* Mengubah tata letak menjadi kolom pada layar kecil */
+        align-items: center; /* Menyelaraskan item ke tengah */
+    }
+}
