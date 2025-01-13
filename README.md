@@ -5,11 +5,4 @@ Description:
 
 Users can encrypt and decrypt data, perform brute force attacks on encrypted data, encrypt text files, and send messages securely to other users, as these messages are encrypted within the database."
 
-Group Leader:
-Syahdan Arief S- 4332401006
-
-Group Members:
-  1. Faizah Muhammad - 4332401015
-  2. Lu’lu’ul Ilmi - 4332401016
-
 Nothing is true. Everything is permitted.
